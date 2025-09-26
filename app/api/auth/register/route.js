@@ -45,8 +45,13 @@ export async function POST(request) {
             .setProtectedHeader({ alg: 'HS256' })
             .sign(secret)
 
-
-        await sendMail('Email Verification request from Madhav Saree', email, emailVerificationLink(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-email/${token}`))
+        // Fire-and-forget email send to keep API fast
+        // Intentionally not awaited; errors will be logged by sendMail
+        sendMail(
+            'Email Verification request from Madhav Saree',
+            email,
+            emailVerificationLink(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-email/${token}`)
+        )
 
         return response(true, 200, 'Registration success, Please verify your email address.')
 

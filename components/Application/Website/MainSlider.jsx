@@ -19,10 +19,10 @@ const ArrowNext = (props) => {
         <button 
             onClick={onClick} 
             type='button' 
-            className='w-16 h-16 flex justify-center items-center rounded-full absolute z-20 top-1/2 -translate-y-1/2 right-8 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group' 
+            className='w-12 h-12 flex justify-center items-center rounded-full absolute z-20 top-1/2 -translate-y-1/2 right-4 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group' 
         >
-            <div className='w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
-                <LuChevronRight size={24} className='text-white group-hover:scale-110 transition-transform duration-300' />
+            <div className='w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
+                <LuChevronRight size={18} className='text-white group-hover:scale-110 transition-transform duration-300' />
             </div>
         </button>
     )
@@ -33,10 +33,10 @@ const ArrowPrev = (props) => {
         <button 
             onClick={onClick} 
             type='button' 
-            className='w-16 h-16 flex justify-center items-center rounded-full absolute z-20 top-1/2 -translate-y-1/2 left-8 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group' 
+            className='w-12 h-12 flex justify-center items-center rounded-full absolute z-20 top-1/2 -translate-y-1/2 left-4 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group' 
         >
-            <div className='w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
-                <LuChevronLeft size={24} className='text-white group-hover:scale-110 transition-transform duration-300' />
+            <div className='w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
+                <LuChevronLeft size={18} className='text-white group-hover:scale-110 transition-transform duration-300' />
             </div>
         </button>
     )
@@ -64,29 +64,7 @@ const MainSlider = () => {
         ]
     }
     return (
-        <div className='relative'>
-            <style jsx global>{`
-                .slick-dots {
-                    bottom: 20px !important;
-                    z-index: 15 !important;
-                }
-                .slick-dots li button:before {
-                    color: white !important;
-                    opacity: 0.5 !important;
-                }
-                .slick-dots li.slick-active button:before {
-                    color: white !important;
-                    opacity: 1 !important;
-                }
-                .slick-slide {
-                    position: relative;
-                }
-                .slick-slide img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                }
-            `}</style>
+        <div className='relative mb-12'>
             <Slider {...settings}>
                 <div>
                     <Image src={slider1.src} width={slider1.width} height={slider1.height} alt='Exquisite Silk Sarees' />

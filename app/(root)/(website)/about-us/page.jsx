@@ -12,8 +12,8 @@ const AboutUs = () => {
    <div>
      <WebsiteBreadcrumb props={breadcrumb} />
      <div className='lg:px-40 px-5 py-20'>
-               <h1 className='text-xl font-semibold mb-3'>About Madhav Saree Sangam</h1>
-        <p>Welcome to Madhav Saree Sangam, your premier destination for exquisite sarees that celebrate the timeless elegance of Indian tradition and contemporary fashion.</p>
+               <h1 className='text-xl font-semibold mb-3'>About Ishori</h1>
+        <p>Welcome to Ishori, your premier destination for exquisite sarees that celebrate the timeless elegance of Indian tradition and contemporary fashion.</p>
         <p>Founded with a deep passion for preserving and promoting the rich heritage of Indian sarees, we are dedicated to bringing you the finest collection of sarees from across India. From the luxurious silk sarees of Kanchipuram and Banaras to the elegant cotton sarees of Bengal and the contemporary designer pieces, our curated collection represents the diversity and beauty of Indian craftsmanship.</p>
        <p className='mt-5'>What makes us special:</p>
        <ul className='list-disc ps-10 mt-3'>
@@ -29,7 +29,7 @@ const AboutUs = () => {
        <p className='mt-3'>We believe that every woman deserves to feel beautiful and confident in her saree. Whether you're a saree enthusiast or trying it for the first time, we're here to guide you through your saree journey with personalized attention and care.
        </p>
                <p className='mt-3'>
-        Thank you for choosing Madhav Saree Sangam. Let's celebrate the elegance and grace of the saree together.
+        Thank you for choosing Ishori. Let's celebrate the elegance and grace of the saree together.
         </p>
      </div>
    </div>

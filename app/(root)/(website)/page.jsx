@@ -62,7 +62,7 @@ const Home = () => {
                                 width={banner1.width}
                                 height={banner1.height}
                                         alt='Bridal Sarees Collection'
-                                        className='w-full h-auto transition-all duration-700 group-hover:scale-110'
+                                        className='w-full h-auto block transition-all duration-700 group-hover:scale-110'
                                     />
                                     {/* Overlay gradient */}
                                     <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
@@ -97,7 +97,7 @@ const Home = () => {
                                 width={banner2.width}
                                 height={banner2.height}
                                         alt='Designer Sarees Collection'
-                                        className='w-full h-auto transition-all duration-700 group-hover:scale-110'
+                                        className='w-full h-auto object-cover block transition-all duration-700 group-hover:scale-110'
                                     />
                                     {/* Overlay gradient */}
                                     <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
@@ -116,9 +116,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                     
-                                    {/* Decorative elements */}
-                                    <div className='absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-0 group-hover:scale-100'></div>
-                                    <div className='absolute top-6 right-6 w-8 h-8 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-0 group-hover:scale-100'></div>
+                                    {/* Decorative elements removed for cleaner layout */}
                                 </div>
                         </Link>
                     </div>
@@ -147,7 +145,7 @@ const Home = () => {
                 
                 <div className='relative z-10'>
                     <div className='text-center mb-12'>
-                        <h2 className='text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>Why Choose Madhav Saree Sangam?</h2>
+                        <h2 className='text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>Why Choose Ishori?</h2>
                         <p className='text-gray-600 max-w-2xl mx-auto text-lg'>We're committed to providing you with the best saree shopping experience</p>
                     </div>
                     

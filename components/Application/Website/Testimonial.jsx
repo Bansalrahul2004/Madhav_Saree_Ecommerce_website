@@ -134,7 +134,7 @@ const Testimonial = () => {
         <div className='lg:px-32 px-4 sm:pt-20 pt-5 pb-10 bg-gradient-to-br from-purple-50 via-pink-50 to-white'>
             <div className='text-center mb-12'>
                 <h2 className='text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>What Our Customers Say</h2>
-                <p className='text-gray-600 max-w-2xl mx-auto text-lg'>Hear from our satisfied customers about their experience with Madhav Saree Sangam</p>
+                <p className='text-gray-600 max-w-2xl mx-auto text-lg'>Hear from our satisfied customers about their experience with Ishori</p>
             </div>
             <div className='relative'>
                 <Slider {...settings}>

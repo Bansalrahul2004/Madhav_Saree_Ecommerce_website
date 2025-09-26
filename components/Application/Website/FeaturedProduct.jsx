@@ -17,7 +17,7 @@ const FeaturedProduct = async () => {
     return (
         <section className='lg:px-32 px-4 sm:py-16 bg-gradient-to-br from-white via-purple-50 to-pink-50'>
             <div className='text-center mb-12'>
-                <h2 className='text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>Madhav Saree Sangam's Featured Collection</h2>
+                <h2 className='text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>Ishori's Featured Collection</h2>
                 <p className='text-gray-600 max-w-2xl mx-auto text-lg mb-8'>Discover our handpicked collection of the most exquisite and trending sarees</p>
                 <Link href="/shop" className='inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group'>
                     View All Collections

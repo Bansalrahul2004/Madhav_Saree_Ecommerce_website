@@ -123,5 +123,36 @@
 
 
 .slick-dots{
-  bottom: 15px !important;
+  bottom: -50px !important;
+  z-index: 15 !important;
+  position: absolute !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.slick-dots li {
+  width: 6px !important;
+  height: 6px !important;
+  margin: 0 3px !important;
+  display: inline-block !important;
+}
+
+.slick-dots li button {
+  width: 6px !important;
+  height: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.slick-dots li button:before {
+  display: none !important;
+  content: '' !important;
+}
+
+.slick-dots li.slick-active button {
+  background: rgba(0, 0, 0, 0.7) !important;
 }

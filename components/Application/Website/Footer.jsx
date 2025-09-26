@@ -23,12 +23,12 @@ const Footer = () => {
                             src={logo}
                             width={383}
                             height={146}
-                            alt='Madhav Saree Sangam'
+                            alt='Ishori'
                             className='w-40 transition-transform duration-300 group-hover:scale-105'
                         />
                     </Link>
                     <p className='text-gray-600 text-sm leading-relaxed'>
-                        Your premier destination for exquisite sarees. From traditional silk to contemporary designer pieces, we bring the finest collection of sarees to your doorstep. Discover elegance, embrace tradition — only at Madhav Saree Sangam.
+                        Your premier destination for exquisite sarees. From traditional silk to contemporary designer pieces, we bring the finest collection of sarees to your doorstep. Discover elegance, embrace tradition — only at Ishori.
                     </p>
                 </div>
 
@@ -103,7 +103,7 @@ const Footer = () => {
                             <div className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 mt-1'>
                                 <IoLocationOutline size={18} className='text-purple-600' />
                             </div>
-                            <span className='text-sm text-gray-600 leading-relaxed'>Madhav Saree Sangam, Near old nagar Palika, Kotputli 303108</span>
+                            <span className='text-sm text-gray-600 leading-relaxed'>Ishori, Near old nagar Palika, Kotputli 303108</span>
                         </li>
                         <li className='flex gap-3 items-center'>
                             <div className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
@@ -152,7 +152,7 @@ const Footer = () => {
 
 
             <div className='py-6 bg-gradient-to-r from-purple-600 to-pink-600' >
-                <p className='text-center text-white font-medium'>© 2024 Madhav Saree Sangam. All Rights Reserved.</p>
+                <p className='text-center text-white font-medium'>© 2024 Ishori. All Rights Reserved.</p>
                 <p className='text-center text-white text-sm mt-2'>
                     Developed by{' '}
                     <a 
