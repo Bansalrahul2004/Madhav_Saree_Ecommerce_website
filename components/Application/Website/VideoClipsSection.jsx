@@ -52,6 +52,10 @@ const VideoClipsSection = () => {
                                     preload='metadata'
                                     webkit-playsinline="true"
                                     x5-playsinline="true"
+                                    controls={false}
+                                    disablePictureInPicture
+                                    controlsList='nodownload noplaybackrate nofullscreen'
+                                    poster='/assets/images/img-placeholder.webp'
                                 >
                                     <source src={clip.src} type='video/mp4' />
                                     Your browser does not support the video tag.

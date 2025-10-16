@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const VideoHero = () => {
     const [isMobile, setIsMobile] = useState(false)
     const [videoError, setVideoError] = useState(false)
+    const videoRef = useRef(null)
 
     useEffect(() => {
         const checkMobile = () => {
@@ -21,20 +22,42 @@ const VideoHero = () => {
         setVideoError(true)
     }
 
+    useEffect(() => {
+        const videoElement = videoRef.current
+        if (!videoElement) return
+        // Ensure muted before attempting autoplay on mobile
+        videoElement.muted = true
+        const tryPlay = async () => {
+            try {
+                await videoElement.play()
+            } catch (err) {
+                // Some devices block autoplay; keep poster visible instead of white frame
+                console.warn('Autoplay prevented, showing poster instead', err)
+            }
+        }
+        // Attempt play after small delay to allow metadata
+        const id = setTimeout(tryPlay, 50)
+        return () => clearTimeout(id)
+    }, [])
+
     return (
         // Use negative top offset so the video reaches up to the fixed header (header uses pt-[88px] / lg:pt-[110px])
         <section aria-label="Saree video hero" className='relative w-full -mt-[88px] lg:-mt-[110px] h-[calc(60vh+88px)] lg:h-[calc(90vh+110px)] md:h-[calc(70vh+88px)] overflow-hidden'>
             {!videoError ? (
                 <video
+                    ref={videoRef}
                     className='absolute inset-0 w-full h-full object-cover'
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload='auto'
+                    preload='metadata'
                     webkit-playsinline="true"
                     x5-playsinline="true"
                     controls={false}
+                    disablePictureInPicture
+                    controlsList='nodownload noplaybackrate nofullscreen'
+                    poster='/assets/images/img-placeholder.webp'
                     onError={handleVideoError}
                     onLoadStart={() => console.log('Video loading started')}
                     onCanPlay={() => console.log('Video can play')}

@@ -50,6 +50,10 @@ const FeaturedProduct = () => {
                 loop
                 playsInline
                 preload='metadata'
+                controls={false}
+                disablePictureInPicture
+                controlsList='nodownload noplaybackrate nofullscreen'
+                poster='/assets/images/img-placeholder.webp'
                 style={{
                     animation: 'slowVideo 20s linear infinite',
                     transform: 'scale(1.1)'
