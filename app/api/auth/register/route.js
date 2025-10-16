@@ -45,13 +45,18 @@ export async function POST(request) {
             .setProtectedHeader({ alg: 'HS256' })
             .sign(secret)
 
-        // Fire-and-forget email send to keep API fast
-        // Intentionally not awaited; errors will be logged by sendMail
-        sendMail(
+        // Send verification email and wait for confirmation
+        const emailResult = await sendMail(
             'Email Verification request from Madhav Saree',
             email,
             emailVerificationLink(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-email/${token}`)
         )
+
+        if (!emailResult.success) {
+            // Log the error but don't fail registration
+            console.error('Email sending failed during registration:', emailResult.message)
+            return response(true, 200, 'Registration successful, but verification email could not be sent. Please try logging in to resend the verification email.')
+        }
 
         return response(true, 200, 'Registration success, Please verify your email address.')
 

@@ -92,6 +92,15 @@ const Footer = () => {
                         <li>
                             <Link href="/terms-and-conditions" className='text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium'>Terms & Conditions</Link>
                         </li>
+                        <li>
+                            <Link href="/contact-us" className='text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium'>Contact Us</Link>
+                        </li>
+                        <li>
+                            <Link href="/shipping" className='text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium'>Shipping Policy</Link>
+                        </li>
+                        <li>
+                            <Link href="/cancellation-and-refund" className='text-gray-600 hover:text-purple-600 transition-colors duration-300 font-medium'>Cancellation & Refund</Link>
+                        </li>
 
 
                     </ul>

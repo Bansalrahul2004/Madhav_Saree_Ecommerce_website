@@ -1,4 +1,4 @@
-import MainSlider from '@/components/Application/Website/MainSlider'
+// Slider removed per request
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -8,6 +8,7 @@ import FeaturedProduct from '@/components/Application/Website/FeaturedProduct'
 import advertisingBanner from '@/public/assets/images/advertising-banner.png'
 import Testimonial from '@/components/Application/Website/Testimonial'
 import { WEBSITE_SHOP } from '@/routes/WebsiteRoute'
+import VideoHero from '@/components/Application/Website/VideoHero'
 
 import { GiReturnArrow } from "react-icons/gi";
 import { FaShippingFast } from "react-icons/fa";
@@ -17,9 +18,14 @@ import { TbRosetteDiscountFilled } from "react-icons/tb";
 const Home = () => {
     return (
         <>
-            <section>
-                <MainSlider />
-            </section>
+            {/* Video hero below navbar */}
+            <div className='lg:mt-0'>
+                <VideoHero />
+            </div>
+
+            {/* Featured products directly below the video hero */}
+            <FeaturedProduct />
+
             <section className='lg:px-32 px-4 sm:pt-20 pt-5 pb-10 bg-gradient-to-br from-purple-50 via-pink-50 to-white relative overflow-hidden'>
                 {/* Background decorative elements */}
                 <div className='absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full -translate-y-32 translate-x-32 opacity-10'></div>
@@ -58,12 +64,10 @@ const Home = () => {
                             <Link href={`${WEBSITE_SHOP}?category=bridal-sarees`} className='block'>
                                 <div className='relative overflow-hidden'>
                             <Image
-                                src={banner1.src}
-                                width={banner1.width}
-                                height={banner1.height}
-                                        alt='Bridal Sarees Collection'
-                                        className='w-full h-auto block transition-all duration-700 group-hover:scale-110'
-                                    />
+                                src={banner1}
+                                alt='Bridal Sarees Collection'
+                                className='w-full h-auto block transition-all duration-700 group-hover:scale-110'
+                            />
                                     {/* Overlay gradient */}
                                     <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                                     
@@ -93,12 +97,10 @@ const Home = () => {
                             <Link href={`${WEBSITE_SHOP}?category=designer-sarees`} className='block'>
                                 <div className='relative overflow-hidden'>
                             <Image
-                                src={banner2.src}
-                                width={banner2.width}
-                                height={banner2.height}
-                                        alt='Designer Sarees Collection'
-                                        className='w-full h-auto object-cover block transition-all duration-700 group-hover:scale-110'
-                                    />
+                                src={banner2}
+                                alt='Designer Sarees Collection'
+                                className='w-full h-auto object-cover block transition-all duration-700 group-hover:scale-110'
+                            />
                                     {/* Overlay gradient */}
                                     <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                                     
@@ -124,15 +126,10 @@ const Home = () => {
                 </div>
             </section>
 
-            <FeaturedProduct />
-
             <section className='sm:pt-20 pt-5 pb-10'>
                 <Image
-                    src={advertisingBanner.src}
-                    height={advertisingBanner.height}
-                    width={advertisingBanner.width}
+                    src={advertisingBanner}
                     alt='Advertisement'
-
                 />
             </section>
 
