@@ -55,7 +55,7 @@ const VideoClipsSection = () => {
                                     controls={false}
                                     disablePictureInPicture
                                     controlsList='nodownload noplaybackrate nofullscreen'
-                                    poster='/assets/images/img-placeholder.webp'
+                                    poster='/assets/images/img-placeholder.png'
                                 >
                                     <source src={clip.src} type='video/mp4' />
                                     Your browser does not support the video tag.

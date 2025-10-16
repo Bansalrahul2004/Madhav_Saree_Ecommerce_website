@@ -57,7 +57,7 @@ const VideoHero = () => {
                     controls={false}
                     disablePictureInPicture
                     controlsList='nodownload noplaybackrate nofullscreen'
-                    poster='/assets/images/img-placeholder.webp'
+                    poster='/assets/images/extra_image.png'
                     onError={handleVideoError}
                     onLoadStart={() => console.log('Video loading started')}
                     onCanPlay={() => console.log('Video can play')}

@@ -53,7 +53,7 @@ const FeaturedProduct = () => {
                 controls={false}
                 disablePictureInPicture
                 controlsList='nodownload noplaybackrate nofullscreen'
-                poster='/assets/images/img-placeholder.webp'
+                poster='/assets/images/extra_image.png'
                 style={{
                     animation: 'slowVideo 20s linear infinite',
                     transform: 'scale(1.1)'
