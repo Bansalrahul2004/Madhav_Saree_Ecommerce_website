@@ -1,8 +1,9 @@
 import { connectDB } from "@/lib/databaseConnection";
 import { catchError, response } from "@/lib/helperFunction";
 import UserModel from "@/models/User.model";
-import { jwtVerify } from "jose";
+import { jwtVerify, SignJWT } from "jose";
 import { isValidObjectId } from "mongoose";
+import { cookies } from "next/headers";
 
 export async function POST(request) {
     try {
@@ -29,8 +30,32 @@ export async function POST(request) {
         user.isEmailVerified = true
         await user.save()
 
+        // Issue login token and set auth cookie so the user is automatically logged in
+        const loggedInUserData = {
+            _id: user._id.toString(),
+            role: user.role,
+            name: user.name,
+            avatar: user.avatar,
+        }
 
-        return response(true, 200, 'Email verification success.')
+        const secretForSigning = new TextEncoder().encode(process.env.SECRET_KEY)
+        const loginToken = await new SignJWT(loggedInUserData)
+            .setIssuedAt()
+            .setExpirationTime('24h')
+            .setProtectedHeader({ alg: 'HS256' })
+            .sign(secretForSigning)
+
+        const cookieStore = await cookies()
+        cookieStore.set({
+            name: 'access_token',
+            value: loginToken,
+            httpOnly: process.env.NODE_ENV === 'production',
+            path: '/',
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'lax',
+        })
+
+        return response(true, 200, 'Email verification success. Logged in automatically.')
 
     } catch (error) {
         return catchError(error)

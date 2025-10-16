@@ -8,14 +8,18 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { WEBSITE_HOME } from '@/routes/WebsiteRoute'
+import { useRouter } from 'next/navigation'
 const EmailVerification = ({ params }) => {
     const { token } = use(params)
     const [isVerified, setIsVerified] = useState(false)
+    const router = useRouter()
     useEffect(() => {
         const verify = async () => {
             const { data: verificationResponse } = await axios.post('/api/auth/verify-email', { token })
             if (verificationResponse.success) {
                 setIsVerified(true)
+                // Small delay to show success UI then redirect home (already logged in by API cookie)
+                setTimeout(() => router.replace(WEBSITE_HOME), 1200)
             }
         }
 
