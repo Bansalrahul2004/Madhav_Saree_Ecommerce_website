@@ -71,10 +71,10 @@ const Testimonial = () => {
             <button
                 onClick={onClick}
                 type='button'
-                className='w-16 h-16 flex justify-center items-center rounded-full absolute z-10 top-1/2 -translate-y-1/2 right-8 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group'
+                className='w-12 h-12 flex justify-center items-center rounded-full absolute z-10 top-1/2 -translate-y-1/2 right-4 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group'
             >
-                <div className='w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
-                    <LuChevronRight size={24} className='text-white group-hover:scale-110 transition-transform duration-300' />
+                <div className='w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
+                    <LuChevronRight size={16} className='text-white group-hover:scale-110 transition-transform duration-300' />
                 </div>
             </button>
         )
@@ -86,10 +86,10 @@ const Testimonial = () => {
             <button
                 onClick={onClick}
                 type='button'
-                className='w-16 h-16 flex justify-center items-center rounded-full absolute z-10 top-1/2 -translate-y-1/2 left-8 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 group'
+                className='w-12 h-12 flex justify-center items-center rounded-full absolute z-10 top-1/2 -translate-y-1/2 left-4 bg-gradient-to-r from-white/90 to-white/95 backdrop-blur-sm border border-white/20 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group'
             >
-                <div className='w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
-                    <LuChevronLeft size={24} className='text-white group-hover:scale-110 transition-transform duration-300' />
+                <div className='w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-300 shadow-lg'>
+                    <LuChevronLeft size={16} className='text-white group-hover:scale-110 transition-transform duration-300' />
                 </div>
             </button>
         )
@@ -131,40 +131,40 @@ const Testimonial = () => {
     }
 
     return (
-        <div className='lg:px-32 px-4 sm:pt-20 pt-5 pb-10 bg-gradient-to-br from-purple-50 via-pink-50 to-white'>
-            <div className='text-center mb-12'>
-                <h2 className='text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4'>What Our Customers Say</h2>
-                <p className='text-gray-600 max-w-2xl mx-auto text-lg'>Hear from our satisfied customers about their experience with Ishori</p>
+        <div className='lg:px-16 px-4 sm:pt-12 pt-4 pb-6 bg-gradient-to-br from-purple-50 via-pink-50 to-white'>
+            <div className='text-center mb-8'>
+                <h2 className='text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2'>What Our Customers Say</h2>
+                <p className='text-gray-600 max-w-xl mx-auto text-base'>Hear from our satisfied customers about their experience with Ishori</p>
             </div>
             <div className='relative'>
                 <Slider {...settings}>
                     {testimonials.map((item, index) => (
-                        <div key={index} className="p-4">
-                            <div className='bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-purple-100 relative overflow-hidden group'>
+                        <div key={index} className="p-2">
+                            <div className='bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 relative overflow-hidden group'>
                                 {/* Background decoration */}
-                                <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full -translate-y-10 translate-x-10 opacity-50 group-hover:opacity-70 transition-opacity duration-300'></div>
+                                <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full -translate-y-8 translate-x-8 opacity-50 group-hover:opacity-70 transition-opacity duration-300'></div>
                                 
                                 {/* Quote icon */}
-                                <div className='relative z-10 mb-6'>
-                                    <div className='w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center shadow-lg'>
-                                        <BsChatQuote size={28} className='text-white' />
+                                <div className='relative z-10 mb-4'>
+                                    <div className='w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center shadow-lg'>
+                                        <BsChatQuote size={20} className='text-white' />
                                     </div>
                                 </div>
 
                                 {/* Review text */}
-                                <div className='relative z-10 mb-6'>
-                                    <p className='text-gray-700 leading-relaxed text-base italic'>"{item.review}"</p>
+                                <div className='relative z-10 mb-4'>
+                                    <p className='text-gray-700 leading-relaxed text-sm italic'>"{item.review}"</p>
                                 </div>
 
                                 {/* Customer info and rating */}
                                 <div className='relative z-10 flex items-center justify-between'>
                                     <div>
-                                        <h4 className='font-bold text-gray-800 text-lg'>{item.name}</h4>
-                                        <p className='text-purple-600 text-sm font-medium'>Verified Customer</p>
+                                        <h4 className='font-bold text-gray-800 text-base'>{item.name}</h4>
+                                        <p className='text-purple-600 text-xs font-medium'>Verified Customer</p>
                                     </div>
                                     <div className='flex gap-1'>
                                         {Array.from({ length: item.rating }).map((_, i) => (
-                                            <IoStar key={`star${i}`} className='text-yellow-400' size={20} />
+                                            <IoStar key={`star${i}`} className='text-yellow-400' size={16} />
                                         ))}
                                     </div>
                                 </div>

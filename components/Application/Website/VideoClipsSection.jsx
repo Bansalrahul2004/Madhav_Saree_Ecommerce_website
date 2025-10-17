@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 
 const VideoClipsSection = () => {
     const videoClips = [
@@ -55,7 +56,7 @@ const VideoClipsSection = () => {
                                     controls={false}
                                     disablePictureInPicture
                                     controlsList='nodownload noplaybackrate nofullscreen'
-                                    poster='/assets/images/img-placeholder.png'
+                                    poster='/assets/images/extra_image.png'
                                 >
                                     <source src={clip.src} type='video/mp4' />
                                     Your browser does not support the video tag.
@@ -80,12 +81,12 @@ const VideoClipsSection = () => {
 
                 {/* Call to action */}
                 <div className='text-center mt-12'>
-                    <button className='inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105'>
-                        Explore All Collections
+                    <Link href="/about-us" className='inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 group'>
+                        About Us
                         <svg className='w-5 h-5 group-hover:translate-x-1 transition-transform duration-300' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />
                         </svg>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

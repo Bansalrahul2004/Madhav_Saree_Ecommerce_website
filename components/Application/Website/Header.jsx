@@ -2,7 +2,7 @@
 import { USER_DASHBOARD, WEBSITE_HOME, WEBSITE_LOGIN, WEBSITE_SHOP } from '@/routes/WebsiteRoute'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '@/public/assets/images/logo-black.png'
 import { IoIosSearch } from "react-icons/io";
 import Cart from './Cart'
@@ -19,17 +19,30 @@ const Header = () => {
     const auth = useSelector(store => store.authStore.auth)
     const [isMobileMenu, setIsMobileMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const searchParams = useSearchParams()
     const pathname = usePathname()
     const isHome = pathname === '/'
-    const navLinkClass = isHome ? 'text-white hover:text-white/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)]' : 'text-gray-800 hover:text-purple-600'
+    
+    // Scroll detection
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY
+            setIsScrolled(scrollTop > 50)
+        }
+        
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+    
+    const navLinkClass = (isHome && !isScrolled) ? 'text-white hover:text-white/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)]' : 'text-gray-800 hover:text-purple-600'
     const activeCategory = searchParams.get('category')
 
     return (
         <div className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-            isHome 
+            (isHome && !isScrolled) 
             ? 'bg-transparent' 
-            : 'bg-white border-b border-gray-100 shadow-lg'
+            : 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg'
         } lg:px-32 px-4`}>
             <div className='flex justify-between items-center lg:py-5 py-3'>
                 <Link href={WEBSITE_HOME} className='group'>
@@ -44,7 +57,7 @@ const Header = () => {
                 </Link>
 
                 <div className='flex justify-between items-center gap-6'>
-                    <nav className={`lg:relative lg:w-auto lg:h-auto lg:top-0 lg:left-0 lg:p-0 ${isHome ? 'bg-transparent' : 'bg-gradient-to-b from-white to-purple-50'} lg:bg-transparent fixed z-50 top-0 w-full h-screen transition-all ${isMobileMenu ? 'left-0' : '-left-full'}`}>
+                    <nav className={`lg:relative lg:w-auto lg:h-auto lg:top-0 lg:left-0 lg:p-0 ${(isHome && !isScrolled) ? 'bg-transparent' : 'bg-gradient-to-b from-white to-purple-50'} lg:bg-transparent fixed z-50 top-0 w-full h-screen transition-all ${isMobileMenu ? 'left-0' : '-left-full'}`}>
                         <div className='lg:hidden flex justify-between items-center bg-gradient-to-r from-purple-600 to-pink-600 py-4 border-b px-4'>
                             <div className='bg-white/90 backdrop-blur-sm rounded-lg p-1 shadow-sm'>
                                 <Image
@@ -115,7 +128,7 @@ const Header = () => {
                         </ul>
                     </nav>
                     <div className='flex items-center gap-4'>
-                        <button type='button' onClick={() => setShowSearch(!showSearch)} className={`${isHome ? 'text-white/95' : 'text-gray-700'} p-2 rounded-md hover:bg-white/10 transition-colors duration-200`} aria-label='Search'>
+                        <button type='button' onClick={() => setShowSearch(!showSearch)} className={`${(isHome && !isScrolled) ? 'text-white/95' : 'text-gray-700'} p-2 rounded-md hover:bg-white/10 transition-colors duration-200`} aria-label='Search'>
                             <IoIosSearch size={20} />
                         </button>
 
@@ -128,18 +141,18 @@ const Header = () => {
                                 <Avatar className='w-8 h-8'>
                                     <AvatarImage src={auth?.profilePicture || userIcon.src} alt='user' />
                                 </Avatar>
-                                <Link href={USER_DASHBOARD} className={`${isHome ? 'text-white/95' : 'text-gray-800'} transition-colors duration-200 font-medium text-sm tracking-wide`}>
+                                <Link href={USER_DASHBOARD} className={`${(isHome && !isScrolled) ? 'text-white/95' : 'text-gray-800'} transition-colors duration-200 font-medium text-sm tracking-wide`}>
                                     {auth?.name}
                                 </Link>
                             </div>
                         ) : (
-                            <Link href={WEBSITE_LOGIN} className={`flex items-center gap-2 ${isHome ? 'text-white/95' : 'text-gray-800'} transition-colors duration-200 font-semibold text-sm tracking-wide`}>
+                            <Link href={WEBSITE_LOGIN} className={`flex items-center gap-2 ${(isHome && !isScrolled) ? 'text-white/95' : 'text-gray-800'} transition-colors duration-200 font-semibold text-sm tracking-wide`}>
                                 <VscAccount size={20} />
                                 <span className='hidden sm:block'>Login</span>
                             </Link>
                         )}
 
-                        <button type='button' onClick={() => setIsMobileMenu(true)} className={`lg:hidden p-2 rounded-md ${isHome ? 'text-white/95' : 'text-gray-700'} hover:bg-white/10 transition-colors duration-200`} aria-label='Open menu'>
+                        <button type='button' onClick={() => setIsMobileMenu(true)} className={`lg:hidden p-2 rounded-md ${(isHome && !isScrolled) ? 'text-white/95' : 'text-gray-700'} hover:bg-white/10 transition-colors duration-200`} aria-label='Open menu'>
                             <HiMiniBars3 size={22} />
                         </button>
                     </div>
