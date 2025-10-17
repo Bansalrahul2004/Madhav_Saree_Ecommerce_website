@@ -13,7 +13,8 @@ const FeaturedProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`)
+                // Use same-origin API route to avoid env/mixed-content issues in production
+                const { data } = await axios.get(`/api/product/get-featured-product`)
                 setProductData(data)
             } catch (error) {
                 console.log(error)
