@@ -38,10 +38,10 @@ const VideoClipsSection = () => {
                     </p>
                 </div>
 
-                {/* Video Grid */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+                {/* Video Grid (mobile: horizontal scroll, desktop: grid) */}
+                <div className='flex sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory -mx-4 px-4'>
                     {videoClips.map((clip, index) => (
-                        <div key={index} className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'>
+                        <div key={index} className='group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 min-w-[75%] sm:min-w-0 snap-start'>
                             {/* Video Container */}
                             <div className='relative aspect-[4/5] overflow-hidden'>
                                 <video
