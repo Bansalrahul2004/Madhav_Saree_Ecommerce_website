@@ -118,19 +118,19 @@ const Footer = () => {
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-94148235569" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-94148235569</Link>
+                            <Link href="tel:+91-8306038989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-94148235569</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-9799522244" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-9799522244</Link>
+                            <Link href="tel:+91-8107708989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-9799522244</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlineMail size={14} className='text-purple-600' />
                             </div>
-                            <Link href="mailto:rakshit1805@gmail.com" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>rakshit1805@gmail.com</Link>
+                            <Link href="mailto:connectishori@gmail.com" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>rakshit1805@gmail.com</Link>
                         </li>
 
                     </ul>
@@ -140,10 +140,10 @@ const Footer = () => {
                         <Link href="#" target="_blank" rel="noopener noreferrer" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
                             <AiOutlineYoutube className='text-purple-600 group-hover:text-purple-700 transition-colors duration-300' size={18} />
                         </Link>
-                        <Link href="https://www.instagram.com/madhavsarees.official/" target="_blank" rel="noopener noreferrer" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
+                        <Link href="https://www.instagram.com/by.ishori?igsh=MXBta2cxenN2NzZvOQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
                             <FaInstagram className='text-purple-600 group-hover:text-purple-700 transition-colors duration-300' size={18} />
                         </Link>
-                        <Link href="" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
+                        <Link href="https://wa.me/message/MH6LBQV3FWC4C1" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
                             <FaWhatsapp className='text-purple-600 group-hover:text-purple-700 transition-colors duration-300' size={18} />
                         </Link>
                         <Link href="https://www.facebook.com/profile.php?id=61578129207546" target="_blank" rel="noopener noreferrer" className='p-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 group'>
