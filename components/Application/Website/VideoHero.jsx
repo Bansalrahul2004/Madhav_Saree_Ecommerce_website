@@ -41,8 +41,8 @@ const VideoHero = () => {
     }, [])
 
     return (
-        // Use negative top offset so the video reaches up to the fixed header (header uses pt-[88px] / lg:pt-[110px])
-        <section aria-label="Saree video hero" className='relative w-full -mt-[88px] lg:-mt-[110px] h-[calc(60vh+88px)] lg:h-[calc(90vh+110px)] md:h-[calc(70vh+88px)] overflow-hidden'>
+        // Use negative top offset so the video reaches up to the fixed header (optimized for minimal mobile spacing)
+        <section aria-label="Saree video hero" className='relative w-full -mt-[40px] lg:-mt-[60px] h-[calc(60vh+40px)] lg:h-[calc(90vh+60px)] md:h-[calc(70vh+40px)] overflow-hidden'>
             {!videoError ? (
                 <video
                     ref={videoRef}

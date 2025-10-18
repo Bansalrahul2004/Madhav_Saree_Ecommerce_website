@@ -11,9 +11,17 @@ export async function POST(request) {
             return response(false, 403, 'Unauthorized.')
         }
 
-        await connectDB()
+        // Connect to database with error handling
+        try {
+            await connectDB()
+        } catch (dbError) {
+            console.error('Database connection error:', dbError)
+            return response(false, 500, 'Database connection failed.')
+        }
+
         const payload = await request.json()
 
+        // Validate required fields
         const schema = zSchema.pick({
             product: true,
             sku: true,
@@ -25,13 +33,29 @@ export async function POST(request) {
             media: true
         })
 
-
         const validate = schema.safeParse(payload)
         if (!validate.success) {
+            console.error('Validation error:', validate.error)
             return response(false, 400, 'Invalid or missing fields.', validate.error)
         }
 
         const variantData = validate.data
+
+        // Validate that product exists
+        const ProductModel = (await import('@/models/Product.model')).default
+        const productExists = await ProductModel.findById(variantData.product)
+        if (!productExists) {
+            return response(false, 400, 'Product not found.')
+        }
+
+        // Validate that media exists
+        const MediaModel = (await import('@/models/Media.model')).default
+        const mediaExists = await MediaModel.find({ _id: { $in: variantData.media } })
+        if (mediaExists.length !== variantData.media.length) {
+            return response(false, 400, 'One or more media files not found.')
+        }
+
+        // SKU constraint removed - allowing duplicate SKUs
 
         const newProductVariant = new ProductVariantModel({
             product: variantData.product,
@@ -49,6 +73,7 @@ export async function POST(request) {
         return response(true, 200, 'Product Variant added successfully.')
 
     } catch (error) {
-        return catchError(error)
+        console.error('Product variant creation error:', error)
+        return catchError(error, 'Failed to create product variant. Please try again.')
     }
 }

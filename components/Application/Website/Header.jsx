@@ -60,7 +60,7 @@ const Header = () => {
             !isScrolled 
             ? 'bg-transparent' 
             : 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg'
-        } lg:px-40 px-4 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ 
+        } lg:px-40 px-3 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} style={{ 
             position: 'fixed', 
             top: 0, 
             left: 0, 
@@ -69,19 +69,19 @@ const Header = () => {
             willChange: 'auto',
             backfaceVisibility: 'hidden'
         }}>
-            <div className='flex justify-between items-center lg:py-5 py-3'>
+            <div className='flex justify-between items-center lg:py-4 py-1'>
                 <Link href={WEBSITE_HOME} className='group'>
                     <Image
                         src={logo}
                         width={383}
                         height={146}
                         alt='Ishori'
-                        className='lg:w-80 w-56 transition-transform duration-300 group-hover:scale-105'
+                        className='lg:w-80 w-44 transition-transform duration-300 group-hover:scale-105'
                         priority
                     />
                 </Link>
 
-                <div className='flex justify-between items-center gap-6'>
+                <div className='flex justify-between items-center gap-4'>
                     <nav className={`lg:relative lg:w-auto lg:h-auto lg:top-0 lg:left-0 lg:p-0 ${!isScrolled ? 'bg-transparent' : 'bg-gradient-to-b from-white to-purple-50'} lg:bg-transparent fixed z-[9998] top-0 w-full h-screen transition-all ${isMobileMenu ? 'left-0' : '-left-full'}`}>
                         <div className='lg:hidden flex justify-between items-center bg-gradient-to-r from-purple-600 to-pink-600 py-4 border-b px-4'>
                             <div className='bg-white/90 backdrop-blur-sm rounded-lg p-1 shadow-sm'>
@@ -152,8 +152,8 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className='flex items-center gap-4'>
-                        <button type='button' onClick={() => setShowSearch(!showSearch)} className={`${!isScrolled ? 'text-white/95' : 'text-gray-700'} p-2 rounded-md hover:bg-white/10 transition-colors duration-200`} aria-label='Search'>
+                    <div className='flex items-center gap-3'>
+                        <button type='button' onClick={() => setShowSearch(!showSearch)} className={`${!isScrolled ? 'text-white/95' : 'text-gray-700'} p-1.5 rounded-md hover:bg-white/10 transition-colors duration-200`} aria-label='Search'>
                             <IoIosSearch size={20} />
                         </button>
 
@@ -177,7 +177,7 @@ const Header = () => {
                             </Link>
                         )}
 
-                        <button type='button' onClick={() => setIsMobileMenu(true)} className={`lg:hidden p-2 rounded-md ${!isScrolled ? 'text-white/95' : 'text-gray-700'} hover:bg-white/10 transition-colors duration-200`} aria-label='Open menu'>
+                        <button type='button' onClick={() => setIsMobileMenu(true)} className={`lg:hidden p-0.1 rounded-md ${!isScrolled ? 'text-white/95' : 'text-gray-700'} hover:bg-white/10 transition-colors duration-200`} aria-label='Open menu'>
                             <HiMiniBars3 size={22} />
                         </button>
                     </div>

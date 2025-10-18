@@ -84,21 +84,37 @@ const AddProduct = () => {
     setLoading(true)
     try {
       if (selectedMedia.length <= 0) {
-        return showToast('error', 'Please select media.')
+        showToast('error', 'Please select media.')
+        return
       }
 
       const mediaIds = selectedMedia.map(media => media._id)
       values.media = mediaIds
 
+      console.log('Submitting variant data:', values) // Debug log
+
       const { data: response } = await axios.post('/api/product-variant/create', values)
+      
       if (!response.success) {
-        throw new Error(response.message)
+        console.error('API Error:', response) // Debug log
+        throw new Error(response.message || 'Failed to create product variant')
       }
 
       form.reset()
+      setSelectedMedia([]) // Reset media selection
       showToast('success', response.message)
     } catch (error) {
-      showToast('error', error.message)
+      console.error('Submit error:', error) // Debug log
+      
+      let errorMessage = 'An error occurred while creating the product variant'
+      
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message
+      } else if (error.message) {
+        errorMessage = error.message
+      }
+      
+      showToast('error', errorMessage)
     } finally {
       setLoading(false)
     }
