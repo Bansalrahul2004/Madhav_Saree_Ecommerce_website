@@ -118,13 +118,13 @@ const Footer = () => {
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-8306038989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>91-8306038989</Link>
+                            <Link href="tel:+918307038989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91 8306038989</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-8107708989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-8107708989</Link>
+                            <Link href="tel:+918107708989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91 8107708989</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
