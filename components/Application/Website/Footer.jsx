@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import logo from '@/public/assets/images/logo-black.png'
+import logo from '@/public/assets/images/logo-footer.png'
 import Link from 'next/link'
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlinePhone } from "react-icons/md";
@@ -24,7 +24,7 @@ const Footer = () => {
                             width={383}
                             height={146}
                             alt='Ishori'
-                            className='w-32 transition-transform duration-300 group-hover:scale-105'
+                            className='w-48 lg:w-56 transition-transform duration-300 group-hover:scale-105'
                         />
                     </Link>
                     <p className='text-gray-600 text-xs leading-relaxed'>
@@ -118,19 +118,19 @@ const Footer = () => {
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-8306038989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-94148235569</Link>
+                            <Link href="tel:+91-8306038989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>91-8306038989</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlinePhone size={14} className='text-purple-600' />
                             </div>
-                            <Link href="tel:+91-8107708989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-9799522244</Link>
+                            <Link href="tel:+91-8107708989" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>+91-8107708989</Link>
                         </li>
                         <li className='flex gap-2 items-center'>
                             <div className='p-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100'>
                                 <MdOutlineMail size={14} className='text-purple-600' />
                             </div>
-                            <Link href="mailto:connectishori@gmail.com" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>rakshit1805@gmail.com</Link>
+                            <Link href="mailto:connectishori@gmail.com" className='hover:text-purple-600 text-xs font-medium transition-colors duration-300'>connectishori@gmail.com</Link>
                         </li>
 
                     </ul>
