@@ -58,9 +58,9 @@ const AddProduct = () => {
       sku: "",
       color: "",
       size: "",
-      mrp: "",
-      sellingPrice: "",
-      discountPercentage: "",
+      mrp: 0,
+      sellingPrice: 0,
+      discountPercentage: 0,
     },
   })
 

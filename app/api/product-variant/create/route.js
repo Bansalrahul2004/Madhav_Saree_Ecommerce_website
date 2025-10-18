@@ -74,6 +74,18 @@ export async function POST(request) {
 
     } catch (error) {
         console.error('Product variant creation error:', error)
+        
+        // Handle specific MongoDB errors
+        if (error.code === 11000) {
+            const duplicateField = Object.keys(error.keyPattern)[0];
+            return response(false, 400, `Duplicate ${duplicateField} value. Please use a different ${duplicateField}.`)
+        }
+        
+        if (error.name === 'ValidationError') {
+            const validationErrors = Object.values(error.errors).map(err => err.message).join(', ');
+            return response(false, 400, `Validation Error: ${validationErrors}`)
+        }
+        
         return catchError(error, 'Failed to create product variant. Please try again.')
     }
 }
